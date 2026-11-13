@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Script tool output",
+  "type": "object",
+  "required": ["skill_name", "execution_status", "summary", "input_target", "results"],
+  "properties": {
+    "skill_name": { "type": "string" },
+    "execution_status": { "enum": ["PASS", "WARNING", "FAIL"] },
+    "summary": { "type": "string" },
+    "input_target": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "status", "message"],
+        "properties": {
+          "item_id": { "type": "string" },
+          "status": { "enum": ["PASS", "FAIL"] },
+          "message": { "type": "string" },
+          "suggested_action": { "type": "string" }
+        }
+      }
+    },
+    "artifacts_created": { "type": "array", "items": { "type": "string" } }
+  }
+}

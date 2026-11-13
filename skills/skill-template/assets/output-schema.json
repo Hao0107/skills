@@ -1,17 +1,26 @@
 {
-  "skill_name": "skill-template",
-  "execution_status": "PASS | WARNING | FAIL",
-  "summary": "<Tóm tắt ngắn gọn kết quả thực thi trong 1-2 câu>",
-  "input_target": "<Đường dẫn hoặc tên đối tượng vừa xử lý>",
-  "results": [
-    {
-      "item_id": "<Định danh mục kiểm tra/xử lý>",
-      "status": "PASS | FAIL",
-      "message": "<Chi tiết kết quả hoặc nguyên nhân lỗi>",
-      "suggested_action": "<Hành động hoặc câu lệnh đề xuất nếu có lỗi>"
-    }
-  ],
-  "artifacts_created": [
-    "<Đường dẫn tới các file mới được tạo ra (nếu có)>"
-  ]
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skill output",
+  "type": "object",
+  "required": ["skill_name", "execution_status", "summary", "input_target", "results"],
+  "properties": {
+    "skill_name": { "type": "string" },
+    "execution_status": { "enum": ["PASS", "WARNING", "FAIL"] },
+    "summary": { "type": "string", "description": "1-2 sentence result summary" },
+    "input_target": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "status", "message"],
+        "properties": {
+          "item_id": { "type": "string" },
+          "status": { "enum": ["PASS", "FAIL"] },
+          "message": { "type": "string" },
+          "suggested_action": { "type": "string" }
+        }
+      }
+    },
+    "artifacts_created": { "type": "array", "items": { "type": "string" } }
+  }
 }

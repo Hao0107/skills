@@ -1,0 +1,12 @@
+{
+  "skill_name": "video-pipeline-builder",
+  "execution_status": "PASS",
+  "summary": "3 scenes, 15.0s total.",
+  "input_target": "assets/example-script.md",
+  "results": [
+    { "item_id": "scene-1", "status": "PASS", "message": "4.0s", "suggested_action": "" },
+    { "item_id": "scene-2", "status": "PASS", "message": "5.0s", "suggested_action": "" },
+    { "item_id": "scene-3", "status": "PASS", "message": "6.0s", "suggested_action": "" }
+  ],
+  "artifacts_created": ["out/scenes.json"]
+}

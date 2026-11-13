@@ -1,0 +1,11 @@
+{
+  "skill_name": "skill-template",
+  "execution_status": "FAIL",
+  "summary": "1/2 checks passed.",
+  "input_target": "./src",
+  "results": [
+    { "item_id": "rule-a", "status": "PASS", "message": "Naming follows convention.", "suggested_action": "" },
+    { "item_id": "rule-b", "status": "FAIL", "message": "File utils.py exceeds 500 lines.", "suggested_action": "Split utils.py into modules." }
+  ],
+  "artifacts_created": []
+}

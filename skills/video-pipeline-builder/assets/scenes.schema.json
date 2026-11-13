@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "scenes.json",
+  "type": "object",
+  "required": ["fps", "width", "height", "scenes"],
+  "properties": {
+    "fps": { "type": "integer", "minimum": 1 },
+    "width": { "type": "integer", "minimum": 1 },
+    "height": { "type": "integer", "minimum": 1 },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "durationInFrames"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "text": { "type": "string" },
+          "durationInFrames": { "type": "integer", "minimum": 1 },
+          "background": { "type": "string", "description": "CSS color" },
+          "image": { "type": "string", "description": "path under public/, or empty" },
+          "audio": { "type": "string", "description": "path under public/, or empty" }
+        }
+      }
+    }
+  }
+}

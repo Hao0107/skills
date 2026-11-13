@@ -1,1 +1,0 @@
-# [TÙY CHỌN] Tài liệu tham khảo, schema, rule chi tiết
